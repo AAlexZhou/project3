@@ -11,7 +11,8 @@ class Player(pygame.sprite.Sprite):
         self.images = []
         self.shark()
     def shark(self):
-        img = pygame.image.load(os.path.join('image', 'icon.png')).convert()
+        shark = 'image/fugu.png'
+        img = pygame.image.load(shark).convert()
         self.images.append(img)
         self.images = self.images[0]
         self.rect = self.images.get_rect()
