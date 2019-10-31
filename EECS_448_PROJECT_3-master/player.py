@@ -1,6 +1,6 @@
 import pygame
 
-
+sharksize =20
 
 
 class Player():
@@ -11,7 +11,9 @@ class Player():
         self.x = x
         self.y = y
     def move (self,x,y):
-        self.x +=x
-        self.y +=y
+        if 0 < self.x +sharksize/2+x <= self._master.get_width():
+            self.x +=x
+        if 0 < self.y +sharksize/2 + y <= self._master.get_height():
+            self.y +=y
     def draw(self):
         self._master.blit(self.image,(self.x,self.y))
