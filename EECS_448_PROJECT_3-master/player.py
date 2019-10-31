@@ -1,18 +1,17 @@
 import pygame
-import sys
-import os
 
 
 
-class Player(pygame.sprite.Sprite):
 
-    def __init__(self):
-        pygame.sprite.Sprite.__init__(self)
-        self.images = []
-        self.shark()
-    def shark(self):
-        shark = 'image/fugu.png'
-        img = pygame.image.load(shark).convert()
-        self.images.append(img)
-        self.images = self.images[0]
-        self.rect = self.images.get_rect()
+class Player():
+
+    def __init__(self,master,x,y,img_path):
+        self._master = master
+        self. image = pygame.image.load(img_path)
+        self.x = x
+        self.y = y
+    def move (self,x,y):
+        self.x +=x
+        self.y +=y
+    def draw(self):
+        self._master.blit(self.image,(self.x,self.y))
